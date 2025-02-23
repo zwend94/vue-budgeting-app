@@ -43,9 +43,23 @@ export default {
       ]
     },
     totalExpenses() {
-    return this.individualExpenses.reduce((acc, curr) => acc + curr, 0)
+      return this.individualExpenses.reduce((acc, curr) => acc + curr, 0)
+    },
+    variableExp() {
+      return [
+        Number(this.formData.varExpOne),
+        Number(this.formData.varExpTwo),
+        Number(this.formData.varExpThree),
+        Number(this.formData.varExpFour),
+        Number(this.formData.varExpFive),
+        Number(this.formData.varExpSix),
+        Number(this.formData.varExpSeven),
+      ]
+    },
+    totalVariableExpenses() {
+      return this.variableExp.reduce((acc, curr) => acc + curr, 0)
+    }
   },
- },
 };
 </script>
 
@@ -60,12 +74,12 @@ export default {
     </header>
 
     <div class="main-content">
-      <h3 class="side-title">Monthly P/L</h3>
+      <!-- <h3 class="side-title">Monthly P/L</h3> -->
       <table>
         <thead>
           <tr>
-            <th></th>
-            <th></th>
+            <th style="width: 25%;"></th>
+            <th style="width: 75%;">Income</th>
           </tr>
         </thead>
         <tbody>
@@ -91,6 +105,14 @@ export default {
               <CurrencyDisplay class="net-income" :value="incomeAfterTax" />
             </td>
           </tr>
+        </tbody>
+      </table>
+      <table>
+        <thead>
+          <th style="width: 25%;"></th>
+          <th style="width: 75%;">Fixed Costs</th>
+        </thead>
+        <tbody>
           <tr>
             <td class="table-label-cell">Housing Costs</td>
             <td>
@@ -133,11 +155,87 @@ export default {
               <CurrencyDisplay class="net-income" :value="totalExpenses" />
             </td>
           </tr>
+        </tbody>
+      </table>
+      <table>
+        <thead>
+          <th style="width: 25%;"></th>
+          <th style="width: 75%;">Variable Expenses</th>
+        </thead>
+        <tbody>
           <tr>
-            <td class="table-label-cell">Operating Income</td>
-            <td>
-              <CurrencyDisplay class="net-income" :value="totalIncome-totalExpenses" />
-            </td>
+            <td class="table-label-cell">Electric Bill</td>
+              <td >
+                <CurrencyDisplay :value="variableExp[0]" />
+              </td>
+          </tr>
+          <tr>
+            <td class="table-label-cell">Water, Sewer, & Other Utilities</td>
+              <td >
+                <CurrencyDisplay :value="variableExp[1]" />
+              </td>
+          </tr>
+          <tr>
+            <td class="table-label-cell">Clothing</td>
+              <td >
+                <CurrencyDisplay :value="variableExp[2]" />
+              </td>
+          </tr>
+          <tr>
+            <td class="table-label-cell">Groceries</td>
+              <td >
+                <CurrencyDisplay :value="variableExp[3]" />
+              </td>
+          </tr>
+          <tr>
+            <td class="table-label-cell">Transportation</td>
+              <td >
+                <CurrencyDisplay :value="variableExp[4]" />
+              </td>
+          </tr>
+          <tr>
+            <td class="table-label-cell">Debt Payments</td>
+              <td >
+                <CurrencyDisplay :value="variableExp[5]" />
+              </td>
+          </tr>
+          <tr>
+            <td class="table-label-cell">Miscellaneous</td>
+              <td>
+                <CurrencyDisplay :value="variableExp[6]" />
+              </td>
+          </tr>
+          <tr>
+            <td class="table-label-cell">Total Variable Expenses</td>
+              <td>
+                <CurrencyDisplay class="net-income" :value="totalVariableExpenses" />
+              </td>
+          </tr>
+        </tbody>
+      </table>
+      <table>
+        <thead>
+          <th style="width: 25%;"></th>
+          <th style="width: 75%;">Net Cash Flow</th>
+        </thead>
+        <tbody>
+          <tr>
+            <td class="table-label-cell">Total Income</td>
+              <td>
+                <CurrencyDisplay :value="incomeAfterTax" />
+              </td>
+          </tr>
+          <tr>
+            <td class="table-label-cell">Total Expenses</td>
+              <td>
+                <CurrencyDisplay :value="totalExpenses + totalVariableExpenses" />
+              </td>
+          </tr>
+          <tr>
+            <td class="table-label-cell">Net Cash Flow</td>
+              <td>
+                <CurrencyDisplay class="net-income" :value="incomeAfterTax - (totalExpenses + totalVariableExpenses)" />
+              </td>
           </tr>
         </tbody>
       </table>

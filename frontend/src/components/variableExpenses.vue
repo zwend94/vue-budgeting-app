@@ -53,14 +53,6 @@ export default {
           />
         </div>
         <div class="input-row">
-          <label>Transportation Costs <p>(Fuel, ride-share, etc.)</p></label>
-          <input
-            v-model="localData.varExpThree"
-            type="text"
-            placeholder="Enter amount."
-          />
-        </div>
-        <div class="input-row">
           <label>Clothing</label>
           <input
             v-model="localData.varExpFour"
@@ -72,6 +64,14 @@ export default {
           <label>Groceries</label>
           <input
             v-model="localData.varExpSix"
+            type="text"
+            placeholder="Enter amount."
+          />
+        </div>
+        <div class="input-row">
+          <label>Transportation Costs <p>(Fuel, ride-share, etc.)</p></label>
+          <input
+            v-model="localData.varExpThree"
             type="text"
             placeholder="Enter amount."
           />
