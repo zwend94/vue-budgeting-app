@@ -1,6 +1,6 @@
 <script>
-import PercentDisplay from './util/percentDisplay.vue';
-import CurrencyDisplay from './util/currencyDisplay.vue';
+import PercentDisplay from '../util/percentDisplay.vue';
+import CurrencyDisplay from '../util/currencyDisplay.vue';
 
 export default {
   name: 'IncomeStatement',
