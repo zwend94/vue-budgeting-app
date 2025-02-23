@@ -43,7 +43,12 @@
           expSix: '',
           expSeven: '',
           expEight: '',
-
+          varExpOne: '',
+          varExpTwo: '',
+          varExpThree: '',
+          varExpFour: '',
+          varExpFive: '',
+          varExpSix: '',
         },
       };
     },

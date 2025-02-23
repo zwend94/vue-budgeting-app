@@ -6,12 +6,13 @@ export default {
       type: Object,
       required: true,
       default: () => ({
-        expOne: '',
-        expTwo: '',
-        expThree: '',
-        expFour: '',
-        expFive: '',
-        expSix: '',
+        varExpOne: '',
+        varExpTwo: '',
+        varExpThree: '',
+        varExpFour: '',
+        varExpFive: '',
+        varExpSix: '',
+        varExpSeven: '',
       }),
     },
   },
@@ -34,51 +35,59 @@ export default {
   <div class="page">
     <form method="post" @submit.prevent="handleSubmit">
       <fieldset>
-        <legend>Fixed Expenses</legend>
+        <legend>Variable Expenses</legend>
         <div class="input-row">
-          <label>Housing Payment</label>
+          <label>Electric Bill</label>
           <input
-            v-model="localData.expOne"
+            v-model="localData.varExpOne"
             type="text"
             placeholder="Enter amount."
           />
         </div>
         <div class="input-row">
-          <label>Internet</label>
+          <label>Water, Sewer, & Other Utilities</label>
           <input
-            v-model="localData.expTwo"
+            v-model="localData.varExpTwo"
             type="text"
             placeholder="Enter amount."
           />
         </div>
         <div class="input-row">
-          <label>Cell Phone</label>
+          <label>Transportation Costs <p>(Fuel, ride-share, etc.)</p></label>
           <input
-            v-model="localData.expThree"
+            v-model="localData.varExpThree"
             type="text"
             placeholder="Enter amount."
           />
         </div>
         <div class="input-row">
-          <label>Car Payment</label>
+          <label>Clothing</label>
           <input
-            v-model="localData.expFour"
+            v-model="localData.varExpFour"
             type="text"
             placeholder="Enter amount."
           />
         </div>
         <div class="input-row">
-          <label>Car Insurance</label>
+          <label>Groceries</label>
           <input
-            v-model="localData.expFive"
+            v-model="localData.varExpSix"
             type="text"
             placeholder="Enter amount."
           />
         </div>
         <div class="input-row">
-          <label>Other</label>
+          <label>Debt Payments <p>(Student Loans, Credit Card fees, etc.)</p></label>
           <input
-            v-model="localData.expSix"
+            v-model="localData.varExpFive"
+            type="text"
+            placeholder="Enter amount."
+          />
+        </div>
+        <div class="input-row">
+          <label>Other <p>(Childcare expenses, Alimony, etc.)</p></label>
+          <input
+            v-model="localData.varExpSeven"
             type="text"
             placeholder="Enter amount."
           />
@@ -91,3 +100,11 @@ export default {
     </form>
   </div>
 </template>
+<style>
+
+p {
+    font-style: italic;
+    font-weight: normal;
+}
+
+</style>
