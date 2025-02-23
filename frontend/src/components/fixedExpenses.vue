@@ -12,7 +12,6 @@ export default {
         expFour: '',
         expFive: '',
         expSix: '',
-        expSeven: '',
       }),
     },
   },
@@ -37,7 +36,7 @@ export default {
       <fieldset>
         <legend>Fixed Expenses</legend>
         <div class="input-row">
-          <label>Transportation</label>
+          <label>Housing Payment</label>
           <input
             v-model="localData.expOne"
             type="text"
@@ -45,7 +44,7 @@ export default {
           />
         </div>
         <div class="input-row">
-          <label>Electric Bill</label>
+          <label>Internet</label>
           <input
             v-model="localData.expTwo"
             type="text"
@@ -53,7 +52,7 @@ export default {
           />
         </div>
         <div class="input-row">
-          <label>Internet</label>
+          <label>Cell Phone</label>
           <input
             v-model="localData.expThree"
             type="text"
@@ -61,7 +60,7 @@ export default {
           />
         </div>
         <div class="input-row">
-          <label>Cell Phone</label>
+          <label>Car Payment</label>
           <input
             v-model="localData.expFour"
             type="text"
@@ -69,7 +68,7 @@ export default {
           />
         </div>
         <div class="input-row">
-          <label>Car Payment</label>
+          <label>Car Insurance</label>
           <input
             v-model="localData.expFive"
             type="text"
@@ -77,17 +76,9 @@ export default {
           />
         </div>
         <div class="input-row">
-          <label>Car Insurance</label>
-          <input
-            v-model="localData.expSix"
-            type="text"
-            placeholder="Enter amount."
-          />
-        </div>
-        <div class="input-row">
           <label>Other</label>
           <input
-            v-model="localData.expSeven"
+            v-model="localData.expSix"
             type="text"
             placeholder="Enter amount."
           />
