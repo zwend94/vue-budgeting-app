@@ -16,6 +16,7 @@
   import { ref } from 'vue';
   import IncomeInputs from './components/bigInputs.vue';
   import FixedExpenses from './components/fixedExpenses.vue';
+  import VariableExpenses from './components/variableExpenses.vue';
   import IncomeStatement from './components/incomeStatement.vue';
   
   export default {
@@ -23,12 +24,13 @@
     components: {
       IncomeInputs,
       FixedExpenses,
+      VariableExpenses,
       IncomeStatement,
     },
     data() {
       return {
         currentPageIndex: 0,
-        pages: ['IncomeInputs', 'FixedExpenses', 'IncomeStatement'],
+        pages: ['IncomeInputs', 'FixedExpenses', 'VariableExpenses', 'IncomeStatement'],
         formData: {
           monthlySalary: '',
           taxBracket: '',
